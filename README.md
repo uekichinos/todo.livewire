@@ -16,10 +16,7 @@ To install make sure you have all the minimum requirement to run laravel 9 (and 
 
 ## Production
 1. Configure APP_ENV to **production**
-2. Run command **npm run build** and this should generate 3 files (and take note on last 2 files):
-	i. manifest.json
-	ii. assets/app.xxxxx.css
-	iii. assets/app/xxxxx.js
+2. Run command **npm run build** and this should generate 3 files (and take note on last 2 files) - manifest.json, assets/app.xxxxx.css, assets/app/xxxxx.js
 3. edit index.blade.php under resources/views/ and replace last 2 files under production @if
 
 ## Note
