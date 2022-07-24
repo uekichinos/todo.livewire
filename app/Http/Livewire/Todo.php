@@ -3,27 +3,31 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Todo as Todo_Model;
 
 class Todo extends Component
 {
-    public $task;
     public $tasks = [];
+    public $title;
 
-    public function submit() 
+    public function save() 
     {
-        if(isset($this->task) && !empty($this->task)) {
-            $this->tasks[] = ['title' => $this->task, 'time' => date('Y-m-d H:i:s')];
-        }
-        $this->task = '';
+        $todo_model = new Todo_Model();
+        $todo_model->title = $this->title;
+        $todo_model->save();
+
+        $this->title = '';
     }
 
-    public function done($id)
+    public function delete($id)
     {
-        unset($this->tasks[$id]);
+        $todo_model = Todo_Model::find($id);
+        $todo_model->delete();
     }
 
     public function render()
     {
+        $this->tasks = Todo_Model::orderBy('created_at', 'desc')->get();;
         return view('livewire.todo');
     }
 }

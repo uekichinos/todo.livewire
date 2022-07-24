@@ -1,6 +1,6 @@
 # todo livewire
 
-A simple todo application without database.
+A simple todo application with database.
 
 Stacks:
 1. laravel 9
@@ -27,3 +27,6 @@ To install make sure you have all the minimum requirement to run laravel 9 (and 
 2. livewire https://laravel-livewire.com/docs/2.x/quickstart
 3. vite https://laravel-news.com/laravel-blade-hot-refresh-with-vite
 4. tailwindcss + vite https://tailwindcss.com/docs/guides/laravel#vite
+
+## Changes
+24/07/2022 - support database
