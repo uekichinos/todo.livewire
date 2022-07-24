@@ -4,6 +4,7 @@
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-11">
                     <input type="text" id="title" class="w-full text-lg p-2 border border-gray-300" wire:model="title">
+                    @error('title') <span class="text-sm text-red-700">{{ $message }}</span> @enderror
                 </div>
                 <div class="col-span-1 text-right">
                     <button id="submit" type="submit" class="bg-blue-400 hover:bg-blue-600 w-full text-white font-semibold text-lg p-2 rounded-full w-11 h-11">

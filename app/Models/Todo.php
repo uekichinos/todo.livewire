@@ -16,5 +16,10 @@ class Todo extends Model
      */
     protected $table = 'todo';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     public $fillable = ['title'];
 }

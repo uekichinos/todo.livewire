@@ -9,12 +9,17 @@ class Todo extends Component
 {
     public $tasks = [];
     public $title;
+    protected $rules = [
+        'title' => 'required|min:6',
+    ];
 
     public function save() 
     {
-        $todo_model = new Todo_Model();
-        $todo_model->title = $this->title;
-        $todo_model->save();
+        $this->validate();
+
+        Todo_Model::create([
+            'title' => $this->title,
+        ]);
 
         $this->title = '';
     }
