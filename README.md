@@ -3,10 +3,10 @@
 A simple todo application with database.
 
 Stacks:
-1. laravel 9
-2. lifewire
-3. tailwinds
-4. vite
+1. Laravel 9
+2. Livewire
+3. Tailwinds
+4. Vite
 
 To install make sure you have all the minimum requirement to run laravel 9 (and make sure you have the latest composer and nodejs). Once all good, just run **composer update**.
 
