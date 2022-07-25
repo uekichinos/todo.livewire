@@ -26,4 +26,5 @@ To install make sure you have all the minimum requirement to run laravel 9 (and 
 4. tailwindcss + vite https://tailwindcss.com/docs/guides/laravel#vite
 
 ## Changes
+25/07/2022 - add placeholder and datetime format
 24/07/2022 - support database, input validatation and error copywriting
