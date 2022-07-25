@@ -3,7 +3,7 @@
         <form wire:submit.prevent="save">
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-11">
-                    <input type="text" id="title" class="w-full text-lg p-2 border border-gray-300" wire:model="title">
+                    <input type="text" id="title" class="w-full text-lg p-2 border border-gray-300" wire:model="title" placeholder="Take a note...">
                     @error('title') <span class="text-sm text-red-700">{{ $message }}</span> @enderror
                 </div>
                 <div class="col-span-1 text-right">
@@ -16,8 +16,8 @@
 
                 @if(count($tasks) > 0)
                     @foreach($tasks as $key => $task)
-                        <div class="col-span-12 border border-gray-300 p-2 rounded grid grid-cols-12 shadow-md">
-                            <div class="col-span-11 text-xl">{{ $task['title']; }}<br><small class="text-xs"><i>{{ $task['created_at']; }}</i></small></div>
+                        <div class="col-span-12 border border-gray-300 rounded grid grid-cols-12 shadow-inner shadow-md p-2">
+                            <div class="col-span-11 text-xl">{{ $task['title']; }}<br><small class="text-xs"><i>{{ date('d M Y, H:i:s', strtotime($task['created_at'])); }}</i></small></div>
                             <div class="col-span-1 text-right">
                                 <button type="button" wire:click="delete('{{ $task['id'] }}')" class="bg-green-300 hover:bg-green-600 w-full text-white font-semibold text-lg p-2 rounded-full w-8 h-8">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
