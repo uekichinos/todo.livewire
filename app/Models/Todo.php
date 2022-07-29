@@ -21,5 +21,5 @@ class Todo extends Model
      *
      * @var array
      */
-    public $fillable = ['title'];
+    public $fillable = ['title', 'user_id'];
 }

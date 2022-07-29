@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('todo', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->index('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title', 255);
             $table->timestamps();
         });
